@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "27b66321-cfa6-477f-bb9c-87ef826f30f9",
+		"name": "ManagementSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14298354"
+	},
+	"item": [
+		{
+			"name": "Register User ADMIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"admin\",\n    \"role\": \"ADMIN\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1500/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1500",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Student USER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"John\",\n    \"password\": \"password123\",\n    \"role\": \"STUDENT\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1500/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1500",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Log In for ADMIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"admin\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1500/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1500",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Log In for STUDENT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"John\",\n    \"password\": \"password123\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1500/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1500",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a Student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"John Doe\",\n    \"rollNumber\": \"UNIV1\",\n    \"contactDetails\": \"123-456-7890\",\n    \"branch\": \"COMPUTER_SCIENCE\",\n    \"semester\": 1\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1500/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1500",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Subjects",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"subjectCode\": \"CS101\",\n    \"subjectTitle\": \"Introduction to Computer Science\",\n    \"semester\": 1\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1500/subjects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1500",
+					"path": [
+						"subjects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Marks for a Student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"subjectCode\": \"CS101\",\n    \"subjectTitle\": \"Introduction to Computer Science\",\n    \"semester\": 1,\n    \"mark\": 96,\n    \"status\": \"PASS\",\n    \"studentId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1500/marks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1500",
+					"path": [
+						"marks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Student Marks (As a Student)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1500/students/byRollNumberAndSemester?rollNumber=UNIV1&semester=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1500",
+					"path": [
+						"students",
+						"byRollNumberAndSemester"
+					],
+					"query": [
+						{
+							"key": "rollNumber",
+							"value": "UNIV1"
+						},
+						{
+							"key": "semester",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Current User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1500/students/branch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1500",
+					"path": [
+						"students",
+						"branch"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
